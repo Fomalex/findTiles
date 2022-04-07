@@ -1,0 +1,124 @@
+/* 1024 до 1239px */
+@media screen and (max-width: 1240px) {
+    .container {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}
+
+@media screen and (max-width: 1090px) {
+    .main-info, .main-image {
+        margin-right: 50px;
+    }
+}
+
+/* 768 до 1023 */
+@media screen and (max-width: 1023px) {
+    .logo {
+        max-width: 145px;
+    }
+
+    .main {
+        justify-content: center;
+        flex-direction: column;
+        padding: 35px 0 162px 0;
+        text-align: center;
+    }
+
+    .main-info {
+        margin-right: 0;
+    }
+
+    .main-output {
+        margin-top: 122px;
+        width: 488px;
+    }
+
+    .main-image {
+        margin-right: 0;
+    }
+}
+
+/* 480 до 579 */
+@media screen and (max-width: 579px) {
+    .header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 40px 0;
+    }
+
+    .logo {
+        max-width: 126px;
+    }
+
+    .info {
+        width: 89vw;
+        padding: 22px;
+    }
+
+    .main {
+        padding: 0 0 134px 0;
+    }
+
+    .main-info {
+        max-width: 400px;
+    }
+
+    .main-info h1 {
+        font-size: 31px;
+        margin-bottom: 13px;
+    }
+
+    .main-subtitle {
+        font-size: 20px;
+        margin-bottom: 25px;
+    }
+
+    .main-info input {
+        font-size: 16px;
+        width: 100%;
+        padding: 13px 17px;
+        border-radius: 6px;
+        margin-bottom: 18px;
+    }
+
+    .main-info button {
+        width: 100%;
+        padding: 13px;
+        border-radius: 6px;
+        font-size: 16px;
+    }
+
+    .main-output {
+        margin-top: 40px;
+        width: unset;
+        flex-direction: column;
+    }
+
+    .main-image {
+        margin-right: 0;
+        margin-bottom: 40px;
+    }
+
+    .main-output .result-block {
+        font-size: 18px;
+        border-radius: 6px;
+        padding: 16px;
+        width: 129px;
+    }
+
+    .main-output .result-block:first-child {
+        margin-bottom: 20px;
+    }
+}
+
+/* 375 - 424px */
+@media screen and (max-width: 424px) {
+
+}
+
+/* 320 - 374px */
+@media screen and (max-width: 374px) {
+
+}

@@ -29,19 +29,58 @@ window.addEventListener('DOMContentLoaded', () => {
     }
 
     // Получим все необходимые элементы на странице
-    const btn = document.querySelector('#btn'),
+    const findBtn = document.querySelector('#find-btn'),
         latitude = document.querySelector('#latitude'),
         longitude = document.querySelector('#longitude'),
         x = document.querySelector('.x'),
         y = document.querySelector('.y'),
-        tile = document.querySelector('.tile');
+        tile = document.querySelector('.tile'),
+        infoBtn = document.querySelector('.info-btn'),
+        info = document.querySelector('.info'),
+        blur = document.querySelector('.blur'),
+        body = document.body;
+
+
+    // Маска на инпуты:
+    [latitude, longitude].forEach(item => {
+        item.addEventListener('input', () => {
+            item.value = item.value.replace(/[^0-9.]/, '');
+        });
+    });
 
 
     // По клику на кнопку выведем координаты X, Y и заменим приходящую картинку:
-    btn.addEventListener('click', () => {
-        const [valueX, valueY] = translateIntoTiles(latitude.value, longitude.value, 19);
-        x.innerText = valueX;
-        y.innerText = valueY;
-        tile.src = `https://core-carparks-renderer-lots.maps.yandex.net/maps-rdr-carparks/tiles?l=carparks&x=${valueX}&y=${valueY}&z=19&scale=1&lang=ru_RU`;
+    findBtn.addEventListener('click', () => {
+        let valid = true;
+
+        [latitude, longitude].forEach(item => {
+            if (!item.value) {
+                valid = false;
+                item.style.outline = '2px solid #FF3333';
+                item.style.outlineOffset = '-2px';
+            } else {
+                item.style.outline = '0';
+                item.style.outlineOffset = '0';
+            }
+        });
+
+        if (valid) {
+            const [valueX, valueY] = translateIntoTiles(latitude.value, longitude.value, 19);
+            x.innerText = valueX;
+            y.innerText = valueY;
+            tile.src = `https://core-carparks-renderer-lots.maps.yandex.net/maps-rdr-carparks/tiles?l=carparks&x=${valueX}&y=${valueY}&z=19&scale=1&lang=ru_RU`;
+        }
+    });
+
+    infoBtn.addEventListener('click', () => {
+        info.classList.toggle('active');
+        blur.classList.toggle('active');
+        body.classList.toggle('hidden')
+    });
+
+    blur.addEventListener('click', () => {
+        info.classList.remove('active');
+        blur.classList.remove('active');
+        body.classList.remove('hidden')
     });
 });

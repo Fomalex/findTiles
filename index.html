@@ -3,45 +3,75 @@
 <head>
     <meta charset="UTF-8">
     <title>Тестовое задание</title>
-    <link rel="stylesheet" href="main.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/adaptive.css">
 </head>
 <body>
 
 <div class="container">
-    <div class="inputs">
-        <label for="latitude"></label>
-        <input id="latitude" type="text" placeholder="Введите значение широты">
-        <label for="longitude"></label>
-        <input id="longitude" type="text" placeholder="Введите значение долготы">
-        <button id="btn">Найти плитку</button>
-    </div>
-    <div class="output">
-        <img class="tile"
-             src="https://core-carparks-renderer-lots.maps.yandex.net/maps-rdr-carparks/tiles?l=carparks&x=316898&y=164368&z=19&scale=1&lang=ru_RU"
-             width="256"
-             height="256"
-             style="-webkit-user-select: none;background-color: hsl(0, 0%, 90%);transition: background-color 300ms;">
-        <div class="result">
-            <div class="result-block">
-                <div class="result-text">
-                    X:
-                </div>
-                <div class="x">
+    <header class="header">
+        <a class="logo" href="#">
+            <img src="images/logo.png" alt="Логотип">
+        </a>
+        <div class="blur">
+
+        </div>
+        <div class="info-block">
+            <div class="info">
+                Включите в Яндекс.Картах слой парковок. Выберете произвольную точку. Кликните на нее. Возьмите
+                координаты широты и долготы. Их укажите в полях для ввода информации и нажмите “Найти плитку”. Получите
+                маленькую плиточную карту, если рядом с Вашими координатами есть парковки.
+                <div class="polygon">
 
                 </div>
             </div>
-            <div class="result-block">
-                <div class="result-text">
-                    Y:
-                </div>
-                <div class="y">
+            <button class="info-btn">
+                <svg width="38" height="38" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M19 17.4167C18.5801 17.4167 18.1774 17.5835 17.8804 17.8804C17.5835 18.1773 17.4167 18.5801 17.4167 19V25.3333C17.4167 25.7532 17.5835 26.156 17.8804 26.4529C18.1774 26.7498 18.5801 26.9167 19 26.9167C19.42 26.9167 19.8227 26.7498 20.1196 26.4529C20.4165 26.156 20.5834 25.7532 20.5834 25.3333V19C20.5834 18.5801 20.4165 18.1773 20.1196 17.8804C19.8227 17.5835 19.42 17.4167 19 17.4167ZM19.6017 11.21C19.2162 11.0516 18.7838 11.0516 18.3984 11.21C18.204 11.2853 18.0264 11.3983 17.8759 11.5425C17.736 11.6964 17.6235 11.8731 17.5434 12.065C17.4547 12.2529 17.4113 12.459 17.4167 12.6667C17.4155 12.875 17.4554 13.0816 17.5342 13.2745C17.613 13.4674 17.7291 13.6429 17.8759 13.7908C18.0298 13.9307 18.2065 14.0431 18.3984 14.1233C18.6382 14.2219 18.8986 14.26 19.1567 14.2343C19.4147 14.2087 19.6625 14.12 19.8783 13.9762C20.0941 13.8323 20.2712 13.6377 20.3942 13.4094C20.5171 13.181 20.5821 12.926 20.5834 12.6667C20.5775 12.2474 20.4135 11.8459 20.1242 11.5425C19.9736 11.3983 19.7961 11.2853 19.6017 11.21ZM19 3.16666C15.8685 3.16666 12.8073 4.09527 10.2035 5.83505C7.59972 7.57484 5.57032 10.0477 4.37193 12.9408C3.17355 15.834 2.85999 19.0176 3.47093 22.0889C4.08186 25.1603 5.58984 27.9815 7.80417 30.1958C10.0185 32.4102 12.8397 33.9182 15.9111 34.5291C18.9825 35.14 22.166 34.8265 25.0592 33.6281C27.9523 32.4297 30.4252 30.4003 32.165 27.7965C33.9047 25.1927 34.8334 22.1315 34.8334 19C34.8334 16.9207 34.4238 14.8618 33.6281 12.9408C32.8324 11.0198 31.6661 9.27439 30.1959 7.80413C28.7256 6.33387 26.9802 5.1676 25.0592 4.3719C23.1382 3.5762 21.0793 3.16666 19 3.16666V3.16666ZM19 31.6667C16.4948 31.6667 14.0458 30.9238 11.9628 29.5319C9.87978 28.1401 8.25626 26.1618 7.29755 23.8473C6.33884 21.5328 6.088 18.9859 6.57675 16.5288C7.06549 14.0718 8.27188 11.8148 10.0433 10.0433C11.8148 8.27184 14.0718 7.06546 16.5289 6.57671C18.986 6.08796 21.5328 6.33881 23.8473 7.29752C26.1619 8.25623 28.1401 9.87974 29.532 11.9628C30.9238 14.0458 31.6667 16.4948 31.6667 19C31.6667 22.3594 30.3322 25.5812 27.9567 27.9567C25.5813 30.3321 22.3594 31.6667 19 31.6667V31.6667Z"
+                          fill="#F5F6F6"/>
+                </svg>
+            </button>
+        </div>
+    </header>
+    <div class="main">
+        <div class="main-info">
+            <h1>Расчет координат плиточной карты</h1>
+            <div class="main-subtitle">с учетом наличия парковок</div>
+            <label for="latitude"></label>
+            <input id="latitude" type="text" placeholder="Введите значение широты">
+            <label for="longitude"></label>
+            <input id="longitude" type="text" placeholder="Введите значение долготы">
+            <button id="find-btn">Найти плитку</button>
+        </div>
+        <div class="main-output">
+            <div class="main-image">
+                <img class="tile"
+                     src="images/yandex-maps.png"
+                     style="-webkit-user-select: none;transition: background-color 300ms;">
+            </div>
+            <div class="result">
+                <div class="result-block">
+                    <div class="result-text">
+                        X:&nbsp;
+                    </div>
+                    <div class="x">
 
+                    </div>
+                </div>
+                <div class="result-block">
+                    <div class="result-text">
+                        Y:&nbsp;
+                    </div>
+                    <div class="y">
+
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
 
-<script src="main.js"></script>
+<script src="scripts/main.js"></script>
 </body>
 </html>

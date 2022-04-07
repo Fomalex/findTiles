@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Тестовое задание</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+
+<div class="container">
+    <div class="inputs">
+        <label for="latitude"></label>
+        <input id="latitude" type="text" placeholder="Введите значение широты">
+        <label for="longitude"></label>
+        <input id="longitude" type="text" placeholder="Введите значение долготы">
+        <button id="btn">Найти плитку</button>
+    </div>
+    <div class="output">
+        <img class="tile"
+             src="https://core-carparks-renderer-lots.maps.yandex.net/maps-rdr-carparks/tiles?l=carparks&x=316898&y=164368&z=19&scale=1&lang=ru_RU"
+             width="256"
+             height="256"
+             style="-webkit-user-select: none;background-color: hsl(0, 0%, 90%);transition: background-color 300ms;">
+        <div class="result">
+            <div class="result-block">
+                <div class="result-text">
+                    X:
+                </div>
+                <div class="x">
+
+                </div>
+            </div>
+            <div class="result-block">
+                <div class="result-text">
+                    Y:
+                </div>
+                <div class="y">
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="main.js"></script>
+</body>
+</html>
